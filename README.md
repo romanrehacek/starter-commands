@@ -87,3 +87,14 @@ sed -i 's/example\.com/theme_name\.sk/g' wp-content/themes/theme_name/style.css
 wp theme activate theme_name
 wp theme delete twentysixteen
 ```
+
+## Add git
+```
+cd wp-content/theme/theme_name/
+git init
+git remote add origin git_url
+git branch --set-upstream-to=origin/master master
+git add .
+git commit -m "Add default theme"
+git push
+```
