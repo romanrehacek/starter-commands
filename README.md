@@ -98,3 +98,26 @@ gulp.task('compressjs', function() {
   return combined;
 });
 ```
+
+## WP-CLI
+*Install WP-CLI*
+```
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+```
+
+*Install WP*
+```
+wp core download --locale=en_US
+```
+
+*Download wp-config local file*
+```
+wget "https://raw.githubusercontent.com/romanrehacek/starter-commands/master/wp-config-local.php"
+```
+
+*Download modified wp-config file*
+```
+wget "https://raw.githubusercontent.com/romanrehacek/starter-commands/master/wp-config.php"
+```
