@@ -5,10 +5,6 @@
 define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
 // END iThemes Security - Do not modify or remove this line
 
-$protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
-define( 'WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'].'/content_dir' ); // Do not remove. Removing this line could break your site. Added by Security > Settings > Change Content Directory.
-define( 'WP_CONTENT_URL', $protocol.$_SERVER['HTTP_HOST'].'/content_dir' ); // Do not remove. Removing this line could break your site. Added by Security > Settings > Change Content Directory.
-
 /**
  * Local configuration information.
  *
