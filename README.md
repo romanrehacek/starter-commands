@@ -35,11 +35,6 @@ npm install --save-dev gulp
 npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2
 ```
 
-## Download .gitignore
-```
-wget "https://raw.githubusercontent.com/romanrehacek/starter-commands/master/.gitignore"
-```
-
 ## Download gulpfile.js
 
 ```
@@ -91,6 +86,7 @@ wp theme delete twentysixteen
 ## Add git
 ```
 cd wp-content/theme/theme_name/
+wget "https://raw.githubusercontent.com/romanrehacek/starter-commands/master/.gitignore"
 git init
 git remote add origin git_url
 git branch --set-upstream-to=origin/master master
