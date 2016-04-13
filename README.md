@@ -94,3 +94,10 @@ git add .
 git commit -m "Add default theme"
 git push
 ```
+
+## edit gulpfile.js
+*Replace [theme_name] with name of theme dir*
+```
+cd ../../../
+sed -i 's/theme_name/[theme_name]/g' gulpfile.js
+```
