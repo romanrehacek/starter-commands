@@ -7,7 +7,7 @@ var combiner    = require('stream-combiner2');
 var sftp        = require('gulp-sftp');
 var ftp         = require( 'vinyl-ftp' );
 
-var path = './wp-content/themes/theme_name/';
+var path = '[enter_path]'; // etc. ./wp-content/themes/name/ OR ./
 
 var paths = {
     less:   [path + 'css/**/*.less'],
