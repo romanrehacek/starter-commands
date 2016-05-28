@@ -4,9 +4,10 @@ var rename      = require("gulp-rename");
 var cleancss    = require('gulp-clean-css');
 var uglify      = require('gulp-uglify');
 var combiner    = require('stream-combiner2');
+var sftp        = require('gulp-sftp');
+var ftp         = require( 'vinyl-ftp' );
 
-// var path = './wp-content/themes/theme_name/';
-var path = './content_dir/themes/theme_name/';
+var path = './wp-content/themes/theme_name/';
 
 var paths = {
     less:   [path + 'css/**/*.less'],
@@ -15,9 +16,30 @@ var paths = {
              '!' + path + 'js/**/*.min.js']
 };
 
+// FTP connection login info
+var conn = ftp.create( {
+		host:     '',
+		user:     '',
+		password: '',
+		parallel: 10
+	} );
+var remote_base_dir = './www/';
+
 gulp.task('default', function() {
   gulp.watch(paths.less, ['less']);
   gulp.watch(paths.js, ['compressjs']);
+});
+
+gulp.task('watch-ftp', function() {
+  gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.js, ['compressjs']);
+  
+  gulp.watch([path + '**', path + '!node_modules{,/**}', path + '!package.json', path + '!gulpfile.js'])
+    .on('change', function(event) {
+      console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
+      return gulp.src([event.path], {buffer:false, base: './'})
+		    .pipe( conn.dest( remote_base_dir ) );
+    });
 });
 
 
