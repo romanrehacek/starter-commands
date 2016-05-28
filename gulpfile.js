@@ -4,7 +4,6 @@ var rename      = require("gulp-rename");
 var cleancss    = require('gulp-clean-css');
 var uglify      = require('gulp-uglify');
 var combiner    = require('stream-combiner2');
-var sftp        = require('gulp-sftp');
 var ftp         = require( 'vinyl-ftp' );
 
 var path = '[enter_path]'; // etc. ./wp-content/themes/name/ OR ./
