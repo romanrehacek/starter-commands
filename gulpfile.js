@@ -78,3 +78,16 @@ gulp.task('compressjs', function() {
 
   return combined;
 });
+
+gulp.task( 'deploy', function () {
+ 
+	var globs = [
+		path + '**',
+		'!' + path + 'img/**',
+		'!' + path + 'fonts/**'
+	];
+ 
+	return gulp.src( globs, { base: '.', buffer: false } )
+		.pipe( conn.dest( remote_base_dir ) );
+ 
+} );
