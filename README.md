@@ -32,7 +32,7 @@ git push
 npm init
 npm install gulp -g
 npm install --save-dev gulp
-npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2
+npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2 vinyl-ftp
 ```
 
 ## Download gulpfile.js
