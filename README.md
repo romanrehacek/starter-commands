@@ -1,3 +1,12 @@
+# Deploy commands
+```
+lftp
+set ftp:ssl-allow no
+open -u login,pass sftp://host
+mirror --parallel=10 -R --exclude "(.c9|node_modules|gulpfile.js|package.json|start.sh)+" /home/ubuntu/workspace/ /public_html
+```
+
+
 # Starter commands
 
 ## git commands
