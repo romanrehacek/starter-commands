@@ -215,6 +215,7 @@ gulp.task('upload_plugins', function() {
 });
 
 function download(path) {
+  var start = process.hrtime();
   var error, stdout, stderr;
 	var disable_ssl = "set ftp:ssl-allow no; ";
   if (connect_to.protocol == "sftp") {
@@ -227,7 +228,7 @@ function download(path) {
   
   command.on('close', (code) => {
     if (code == 0) {
-      console.log("\x1b[42mDownload complete\x1b[0m");
+      console.log("\x1b[42mDownload complete\x1b[0m after \x1b[35m" + prettyHrtime(process.hrtime(start)) + "\x1b[0m");
     } else {
       console.log("\x1b[41mError\x1b[0m");
     }
@@ -235,6 +236,7 @@ function download(path) {
 }
 
 function upload(path) {
+  var start = process.hrtime();
   var error, stdout, stderr;
 	var disable_ssl = "set ftp:ssl-allow no; ";
   if (connect_to.protocol == "sftp") {
@@ -247,7 +249,7 @@ function upload(path) {
   
   command.on('close', (code) => {
     if (code == 0) {
-      console.log("\x1b[42mUpload complete\x1b[0m");
+      console.log("\x1b[42mUpload complete\x1b[0m after \x1b[35m" + prettyHrtime(process.hrtime(start)) + "\x1b[0m");
     } else {
       console.log("\x1b[41mError\x1b[0m");
     }
