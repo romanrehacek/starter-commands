@@ -29,7 +29,7 @@ var node_path		= require('path');
 var concat			= require('gulp-concat');
 
 
-var path = './wp-content/themes/akocvicit/'; // etc. ./wp-content/themes/name/ OR ./
+var path = '[enter_path]'; // etc. ./wp-content/themes/name/ OR ./
 
 var ftp = {
 	dev: {
