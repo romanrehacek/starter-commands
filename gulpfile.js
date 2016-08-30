@@ -268,7 +268,7 @@ function pack_js(hide_output) {
 };
 
 gulp.task('download_full', function() {
-	download("/");
+	download("");
 });
 
 gulp.task('download_wp_content', function() {
@@ -288,7 +288,7 @@ gulp.task('download_plugins', function() {
 });
 
 gulp.task('upload_full', function() {
-	upload("/");
+	upload("");
 });
 
 gulp.task('upload_wp_content', function() {
