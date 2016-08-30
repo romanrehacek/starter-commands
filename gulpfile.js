@@ -324,7 +324,7 @@ function download(path) {
 	if (connect_to.protocol == "sftp") {
 		disable_ssl = "";
 	}
-	var comando = disable_ssl + "open -u " + connect_to.login + "," + connect_to.pass + " " + connect_to.protocol + "://" + connect_to.host + " -p " + connect_to.port + "; mirror --parallel=10 " + connect_to.path + path + "/ /home/ubuntu/workspace" + path;
+	var comando = disable_ssl + "open -u " + connect_to.login + "," + connect_to.pass + " " + connect_to.protocol + "://" + connect_to.host + " -p " + connect_to.port + "; mirror --parallel=10 --exclude \"(.htaccess|wp-config.php|.c9|node_modules|gulpfile.js|package.json|start.sh)+\" " + connect_to.path + path + "/ /home/ubuntu/workspace" + path;
 
 	const spawn = require('child_process').spawn;
 	const command = spawn('lftp', ['-c', comando], {
@@ -348,7 +348,7 @@ function upload(path) {
 	if (connect_to.protocol == "sftp") {
 		disable_ssl = "";
 	}
-	var comando = disable_ssl + "open -u " + connect_to.login + "," + connect_to.pass + " " + connect_to.protocol + "://" + connect_to.host + " -p " + connect_to.port + "; mirror --parallel=10 -R --exclude \"(.c9|node_modules|gulpfile.js|package.json|start.sh)+\" /home/ubuntu/workspace" + path + "/ " + connect_to.path + path;
+	var comando = disable_ssl + "open -u " + connect_to.login + "," + connect_to.pass + " " + connect_to.protocol + "://" + connect_to.host + " -p " + connect_to.port + "; mirror --parallel=10 -R --exclude \"(.htaccess|wp-config.php|.c9|node_modules|gulpfile.js|package.json|start.sh)+\" /home/ubuntu/workspace" + path + "/ " + connect_to.path + path;
 
 	const spawn = require('child_process').spawn;
 	const command = spawn('lftp', ['-c', comando], {
