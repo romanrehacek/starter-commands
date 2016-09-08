@@ -1,3 +1,7 @@
+```
+npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2 gulp-watch gulp-util pretty-hrtime gulp-concat
+```
+
 # Deploy commands
 ```
 lftp
