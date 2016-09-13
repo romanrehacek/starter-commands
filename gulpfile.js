@@ -13,6 +13,8 @@
  * "gulp upload_wp_content"		- upload full wp-content directory to remote server
  * "gulp upload_themes"			- upload full wp-content/themes directory to remote server
  * "gulp upload_plugins"		- upload full wp-content/plugins directory to remote server
+ * 
+ * "gulp webui"					- start web ui for git
  */
  
  
@@ -364,3 +366,19 @@ function upload(path) {
 		}
 	});
 }
+
+gulp.task('webui', function() {
+
+	const spawn = require('child_process').spawn;
+	try {
+		process.chdir(path);
+		console.log(`New directory: ${process.cwd()}`);
+		const grep = spawn('git', ['webui', '--allow-hosts=' + process.env.C9_HOSTNAME, '--port=8082', '--no-browser'], {
+			stdio: ['inherit', 'inherit', 'inherit']
+		});
+	}
+	catch (err) {
+		console.log(`\x1b[41mError chdir: ${err}\x1b[0m`);
+	}
+	
+});
