@@ -127,10 +127,10 @@ function watch_js_css() {
 			(function(i) {
 				var parse = node_path.parse(datos.history[i]);
 				
-				if (parse.ext == '.less') {
-					less_function(datos.history[i]);
-				} else if (parse.dir.search('/css/vendor') > 0 || parse.dir.search('/css/plugins') > 0) {
+				if (parse.dir.search('/css/vendor') > 0 || parse.dir.search('/css/plugins') > 0) {
 					pack_css();
+				} else if (parse.ext == '.less') {
+					less_function(datos.history[i]);
 				}
 			})(i);
 		}
@@ -141,10 +141,10 @@ function watch_js_css() {
 			(function(i) {
 				var parse = node_path.parse(datos.history[i]);
 				
-				if (parse.ext == '.js' && parse.name.search('.min') <= 0) {
-					compressjs_function(datos.history[i]);
-				} else if (parse.dir.search('/js/vendor') > 0 || parse.dir.search('/js/plugins') > 0) {
+				if (parse.dir.search('/js/vendor') > 0 || parse.dir.search('/js/plugins') > 0) {
 					pack_js();
+				} else if (parse.ext == '.js' && parse.name.search('.min') <= 0) {
+					compressjs_function(datos.history[i]);
 				}
 			})(i);
 		}
