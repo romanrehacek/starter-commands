@@ -2,6 +2,21 @@
 npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2 gulp-watch gulp-util pretty-hrtime gulp-concat
 ```
 
+# .htaccess
+```
+# Disable indexing
+#
+# !!! remove on production !!!
+#
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+  <FilesMatch "\.(doc|pdf|png|jpe?g|gif)$">
+    Header set X-Robots-Tag "noindex, noarchive, nosnippet"
+  </FilesMatch>
+</IfModule>
+# END Disable indexing
+```
+
 # Deploy commands
 ```
 lftp
