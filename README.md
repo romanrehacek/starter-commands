@@ -1,5 +1,5 @@
 ```
-npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2 gulp-watch gulp-util pretty-hrtime gulp-concat
+npm install --save-dev gulp-less gulp-clean-css gulp-uglify gulp-rename stream-combiner2 gulp-watch gulp-util pretty-hrtime gulp-concat gulp-sass
 ```
 
 # .htaccess
