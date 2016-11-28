@@ -220,6 +220,7 @@ function pack_css(hide_output) {
 	var combined = combiner.obj([
 		gulp.src([path + 'css/vendor/**/*.css', path + 'css/plugins/**/*.css']),
 		concat('plugins.css'),
+		gulp.dest(path + 'css'),
 		cleancss({
 			'keepSpecialComments': 0
 		}),
@@ -251,6 +252,7 @@ function pack_js(hide_output) {
 	var combined = combiner.obj([
 		gulp.src([path + 'js/vendor/**/*.js', path + 'js/plugins/**/*.js']),
 		concat('plugins.js'),
+		gulp.dest(path + 'js'),
 		uglify(),
 		rename({
 			suffix: '.min'
